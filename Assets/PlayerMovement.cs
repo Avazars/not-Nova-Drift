@@ -17,7 +17,6 @@ public class PlayerMovement : ShipEntity
     public float speed;
     public float rotationSpeed;
     public float weaponCooldownInSeconds;
-   
     float impulse;
 
     private float timeStamp;

@@ -1,12 +1,12 @@
-﻿using DefaultNamespace;
+﻿using Classes.EntityStats;
+using DefaultNamespace;
 
     public class TargetEntity : ShipEntity
     {
-        public float targetHealth;
-
         public override void Start()
         {
             base.Start();
-            Health = targetHealth;
+            statManager.MaxHull.AddModifier(new StatMod(1f,StatModType.PercentMul,0,this));
+            Health = statManager.MaxHull.FinalValue;
         }
     }

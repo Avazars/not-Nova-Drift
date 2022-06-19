@@ -7,11 +7,6 @@ namespace Classes.EntityStats
     public abstract class EntityStat
     {
         /// <summary>
-        /// this is so that I can access what stat it is from the statmanager by looping and checking its ID.
-        /// </summary>
-        public readonly int statID;
-        
-        /// <summary>
         /// the base value that will be added by the constructor.
         /// </summary>
         private readonly float baseValue;
@@ -19,7 +14,7 @@ namespace Classes.EntityStats
         /// <summary>
         /// the final value that is calculated whenever the stat gains a modifier or a modifier is removed
         /// </summary>
-        private float FinalValue { get; set; }
+        public float FinalValue { get; set; }
         
         /// <summary>
         /// the list of stat modifiers that this stat has
@@ -32,6 +27,7 @@ namespace Classes.EntityStats
         /// </summary>
         protected EntityStat()
         {
+            statMods = new List<StatMod>();
         }
 
         /// <summary>
@@ -76,7 +72,7 @@ namespace Classes.EntityStats
             float temp = baseValue;
             float sumPercentAdd = 0;
             
-            var flat = from StatMod statMod in statMods where statMod.Type == StatModType.Flat select statMod ;
+            var flat = from StatMod statMod in statMods where statMod.Type == StatModType.Flat select statMod;
             var additive = from StatMod statMod in statMods where statMod.Type == StatModType.PercentAdd select statMod;
             var mult = from StatMod statMod in statMods where statMod.Type == StatModType.PercentMul select statMod;
             

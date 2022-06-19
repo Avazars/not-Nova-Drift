@@ -8,11 +8,13 @@ namespace DefaultNamespace
     public abstract class Entity : MonoBehaviour, IDamageable, IMovable
     {
         private Rigidbody2D entityRigidbody;
+        protected EntityStatManager statManager;
         public float Health { get; set; }
-        
+        public float Shield { get; set; }
         
         public virtual void Start()
         {
+            statManager = new EntityStatManager();
             entityRigidbody = gameObject.GetComponent<Rigidbody2D>();
         }
 
@@ -27,14 +29,13 @@ namespace DefaultNamespace
         private void UpdateProportionalDrag()
         {
             var velocity = entityRigidbody.velocity;
-            entityRigidbody.drag = velocity.magnitude / (1.01f + (velocity.magnitude /  10) * 0.9f);
+            entityRigidbody.drag = (velocity.magnitude / (1.02f + (velocity.magnitude /  10)) * 1.1f);
         }
         
         public virtual void Damage(float amount)
         {
             Health -= amount;
         }
-        
         
         public virtual void Rotate(float impulse)
         {

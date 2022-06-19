@@ -137,5 +137,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileLifetime: 1
-  projectileDamage: 2
+  projectileDamage: 1
   initialVelocity: 45
