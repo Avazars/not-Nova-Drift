@@ -9,4 +9,9 @@ using DefaultNamespace;
             statManager.MaxHull.AddModifier(new StatMod(1f,StatModType.PercentMul,0,this));
             Health = statManager.MaxHull.FinalValue;
         }
+
+        public override void Update()
+        {
+            base.Update();
+        }
     }

@@ -18,4 +18,7 @@ public class EntityStatManager
     public ProjectileSpeed ProjectileSpeed = new ProjectileSpeed();
     public RotationSpeed RotationSpeed = new RotationSpeed();
     public ShieldRechargeRate ShieldRechargeRate = new ShieldRechargeRate();
+    
+    
+    
 }

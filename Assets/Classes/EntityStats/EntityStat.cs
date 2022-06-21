@@ -72,6 +72,8 @@ namespace Classes.EntityStats
             float temp = baseValue;
             float sumPercentAdd = 0;
             
+            // LINQ - (Language Integrated Query)
+            
             var flat = from StatMod statMod in statMods where statMod.Type == StatModType.Flat select statMod;
             var additive = from StatMod statMod in statMods where statMod.Type == StatModType.PercentAdd select statMod;
             var mult = from StatMod statMod in statMods where statMod.Type == StatModType.PercentMul select statMod;
