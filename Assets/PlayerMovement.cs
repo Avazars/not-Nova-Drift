@@ -1,4 +1,5 @@
-using DefaultNamespace;
+using Classes.Entities;
+using Classes.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -104,7 +105,7 @@ public class PlayerMovement : ShipEntity
         fireHeld = false;
     }
 
-    private void shoot()
+    private void Shoot()
     {
         if (coolDownTimer.CoolDownComplete)
         {
@@ -124,7 +125,7 @@ public class PlayerMovement : ShipEntity
 
         if (fireHeld)
         {
-            shoot();
+            Shoot();
         }
         
         if (thrustHeld)

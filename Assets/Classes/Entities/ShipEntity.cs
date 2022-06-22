@@ -1,19 +1,7 @@
-﻿using UnityEngine;
-
-namespace DefaultNamespace
+﻿namespace Classes.Entities
 {
     public class ShipEntity : Entity
     {
-        private ShipItemManager itemManager;
         
-        public override void Start()
-        {
-            base.Start();
-            itemManager = new ShipItemManager();
-            foreach (var thing in itemManager.allHulls)
-            {
-                Debug.Log(thing);
-            }
-        }
     }
 }

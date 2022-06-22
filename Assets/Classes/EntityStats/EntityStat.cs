@@ -118,7 +118,7 @@ namespace Classes.EntityStats
         /// removes All stats that originated from a specific source
         /// </summary>
         /// <param name="source"></param>
-        public void removeAllStatsFromSource(object source)
+        public void RemoveAllStatsFromSource(object source)
         {
             foreach (StatMod statMod in statMods)
             {

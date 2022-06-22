@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Classes.EntityStats;
+using Classes.Interfaces;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Classes.Entities
 {
     [RequireComponent(typeof(Collider2D))]
     [RequireComponent(typeof(Rigidbody2D))]
@@ -9,6 +10,8 @@ namespace DefaultNamespace
     {
         private Rigidbody2D entityRigidbody;
         protected EntityStatManager statManager;
+        
+        
         public float Health { get; set; }
         public float Shield { get; set; }
         
@@ -25,6 +28,8 @@ namespace DefaultNamespace
             
             UpdateProportionalDrag();
         }
+        
+        
         
         private void UpdateProportionalDrag()
         {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DefaultNamespace
+namespace Classes.Items.ShipItems.Hulls
 {
     /// <summary>
     /// Abstract hull class that will be inherited by all the hulls in the game.
@@ -8,10 +8,6 @@ namespace DefaultNamespace
     /// </summary>
     public abstract class Hull 
     {
-        protected Hull()
-        {
-        }
-
         public static string hullName;
         private int hullValue;
         private int flatDamageReduction;

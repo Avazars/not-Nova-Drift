@@ -1,9 +1,6 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace Classes.Misc
 {
     [RequireComponent(typeof(Collider2D))]
     public class PlayerDetector : MonoBehaviour

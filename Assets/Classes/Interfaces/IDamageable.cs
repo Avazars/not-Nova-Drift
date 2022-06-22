@@ -1,4 +1,4 @@
-﻿namespace DefaultNamespace
+﻿namespace Classes.Interfaces
 {
     public interface IDamageable
     {

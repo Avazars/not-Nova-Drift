@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-
-namespace DefaultNamespace
+﻿namespace Classes.Entities
 {
     public class AsteroidEntity : EnvironmentEntity
     {
@@ -12,15 +9,6 @@ namespace DefaultNamespace
             base.Start();
             Health = asteroidHealth;
         }
-
-        public override void Update()
-        {
-            base.Update();
-            
-            //Replace with a function called movement
-            //Vector2 vec = Vector2.up * 0.5f;
-            //Thrust(vec);
-            //Rotate(0.5f * Mathf.Deg2Rad);
-        }
+        
     }
 }
