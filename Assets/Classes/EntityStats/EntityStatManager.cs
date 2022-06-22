@@ -21,7 +21,6 @@ namespace Classes.EntityStats
         public RotationSpeed RotationSpeed = new RotationSpeed();
         public ShieldRechargeRate ShieldRechargeRate = new ShieldRechargeRate();
     
-    
-    
+        
     }
 }

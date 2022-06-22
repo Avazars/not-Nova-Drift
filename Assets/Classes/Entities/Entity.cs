@@ -1,5 +1,6 @@
 ﻿using Classes.EntityStats;
 using Classes.Interfaces;
+using Classes.Items;
 using UnityEngine;
 
 namespace Classes.Entities
@@ -10,7 +11,7 @@ namespace Classes.Entities
     {
         private Rigidbody2D entityRigidbody;
         protected EntityStatManager statManager;
-        
+        protected ItemHandler itemHandler;
         
         public float Health { get; set; }
         public float Shield { get; set; }
@@ -18,6 +19,7 @@ namespace Classes.Entities
         public virtual void Start()
         {
             statManager = new EntityStatManager();
+            itemHandler = new ItemHandler(ref statManager);
             entityRigidbody = gameObject.GetComponent<Rigidbody2D>();
         }
 
@@ -28,9 +30,7 @@ namespace Classes.Entities
             
             UpdateProportionalDrag();
         }
-        
-        
-        
+
         private void UpdateProportionalDrag()
         {
             var velocity = entityRigidbody.velocity;

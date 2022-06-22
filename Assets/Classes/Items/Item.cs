@@ -4,14 +4,14 @@ namespace Classes.Items
 {
     public class Item : IEquippable
     {
-        public void EquipItem()
+        public virtual void EquipItem()
         {
-            throw new System.NotImplementedException();
+            
         }
 
-        public void UnEquipItem()
+        public virtual void UnEquipItem()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
