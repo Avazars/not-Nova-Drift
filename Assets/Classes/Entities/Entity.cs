@@ -15,7 +15,7 @@ namespace Classes.Entities
             entityRigidbody = gameObject.GetComponent<Rigidbody2D>();
         }
         
-        private void UpdateProportionalDrag()
+        protected void UpdateProportionalDrag()
         {
             var velocity = entityRigidbody.velocity;
             entityRigidbody.drag = (velocity.magnitude / (1.02f + (velocity.magnitude /  10)) * 1.1f);

@@ -1,6 +1,7 @@
 ﻿using Classes.EntityStats;
 using Classes.Interfaces;
 using Classes.Items;
+using UnityEngine.UIElements;
 
 namespace Classes.Entities
 {
@@ -20,11 +21,12 @@ namespace Classes.Entities
 
         public void Damage(float amount)
         {
-            throw new System.NotImplementedException();
+            Health -= amount;
         }
 
         public virtual void Update()
         {
+            UpdateProportionalDrag();
             if (Health <= 0)
                 Destroy(gameObject);
         }
