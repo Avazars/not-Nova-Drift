@@ -19,7 +19,7 @@ namespace Classes.Entities.Projectiles
             Thrust(InitialVelocity);
         }
         
-        public override void Update()
+        public void Update()
         {
             TimedDeath();
         }
@@ -35,7 +35,7 @@ namespace Classes.Entities.Projectiles
         private void OnTriggerEnter2D(Collider2D col)
         {
         
-            if (col.gameObject.TryGetComponent(out Entity hitEntity))
+            if (col.gameObject.TryGetComponent(out DamageableEntity hitEntity))
             {
                 Destroy(gameObject);
                 hitEntity.Damage(ProjectileDamage);

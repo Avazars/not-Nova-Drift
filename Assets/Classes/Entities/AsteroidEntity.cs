@@ -1,6 +1,6 @@
 ﻿namespace Classes.Entities
 {
-    public class AsteroidEntity : EnvironmentEntity
+    public class AsteroidEntity : DamageableEntity
     {
         public float asteroidHealth;
 

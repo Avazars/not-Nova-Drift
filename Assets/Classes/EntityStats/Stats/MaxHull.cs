@@ -2,6 +2,10 @@
 {
     public class MaxHull : EntityStat
     {
-        public MaxHull(float baseValue) : base(baseValue) { }
+        public MaxHull()
+        {
+            this.baseValue = 5.0f;
+            this.Type = TypeOfStat.MaxHull;
+        }
     }
 }

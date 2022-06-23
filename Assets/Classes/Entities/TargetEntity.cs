@@ -14,12 +14,11 @@ namespace Classes.Entities
 
             healthSlider = healthBar.GetComponent<Slider>();
             
-            statManager.MaxHull.AddModifier(new StatMod(1f,StatModType.PercentMul,0,this));
-            Health = statManager.MaxHull.FinalValue;
+            statManager.AddMod(new StatMod(1f,StatModType.PercentMul, TypeOfStat.MaxHull,0,this));
+            Health = statManager.GetStatValue(TypeOfStat.MaxHull);
             healthSlider.maxValue = Health;
             
             healthSlider.minValue = 0;
-            
         }
 
         public override void Update()

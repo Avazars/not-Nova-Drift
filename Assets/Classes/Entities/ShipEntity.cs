@@ -1,6 +1,9 @@
-﻿namespace Classes.Entities
+﻿using Classes.EntityStats;
+using Classes.Items;
+
+namespace Classes.Entities
 {
-    public class ShipEntity : Entity
+    public class ShipEntity : DamageableEntity
     {
         
     }

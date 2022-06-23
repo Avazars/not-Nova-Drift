@@ -6,15 +6,18 @@ namespace Classes.EntityStats
 {
     public abstract class EntityStat
     {
-        /// <summary>
-        /// the base value that will be added by the constructor.
-        /// </summary>
-        private readonly float baseValue;
         
+        /// <summary>
+        /// the base value that will be added by the constructor of the child classes.
+        /// </summary>
+        protected float baseValue;
+        
+        public TypeOfStat Type { get; protected set; }
+
         /// <summary>
         /// the final value that is calculated whenever the stat gains a modifier or a modifier is removed
         /// </summary>
-        public float FinalValue { get; set; }
+        public float FinalValue { get; private set; }
         
         /// <summary>
         /// the list of stat modifiers that this stat has
@@ -27,17 +30,6 @@ namespace Classes.EntityStats
         /// </summary>
         protected EntityStat()
         {
-            statMods = new List<StatMod>();
-        }
-
-        /// <summary>
-        /// the real constructor that I might use if I need to make a new stat for some reason.
-        /// </summary>
-        /// <param name="baseValue"></param>
-        protected EntityStat(float baseValue)
-        {
-            this.baseValue = baseValue;
-            FinalValue = baseValue;
             statMods = new List<StatMod>();
         }
 
@@ -130,4 +122,6 @@ namespace Classes.EntityStats
             Recalculate();
         }
     }
+    
+    
 }
