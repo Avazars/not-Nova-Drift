@@ -13,21 +13,25 @@ public class PlayerBehavior : MonoBehaviour
     private InputAction thrust;
     private InputAction rotate;
     
-    private bool rotateHeld = false;
-    private bool thrustHeld = false;
+    private bool rotateHeld;
+    private bool thrustHeld;
 
+    
     private float impulse;
     
+    [SerializeField] private float dragScalar;
     [SerializeField] private float rotationSpeed;
 
     private void Start()
     {
         modelRigidbody = target.GetComponent<Rigidbody2D>();
     }
+    
     private void Awake()
     {
         actions = new InputActions();
     }
+    
     private void OnEnable()
     {
         thrust = actions.PlayerControl.Thrust;
@@ -42,21 +46,23 @@ public class PlayerBehavior : MonoBehaviour
         thrust.Enable();
         rotate.Enable();
     }
+    
     private void OnDisable()
     {
         actions.PlayerControl.Thrust.Disable();
         actions.PlayerControl.Rotate.Disable();
     }
+    
     private void DoThrust(InputAction.CallbackContext obj)
     {
         thrustHeld = true;
-        Debug.Log("on");
     }
+    
     private void StopThrust(InputAction.CallbackContext obj)
     {
         thrustHeld = false;
-        Debug.Log("off");
     }
+    
     private void DoRotate(InputAction.CallbackContext obj)
     {
         rotateHeld = true;
@@ -70,21 +76,18 @@ public class PlayerBehavior : MonoBehaviour
             impulse = 1;
         }
     }
+    
     private void StopRotate(InputAction.CallbackContext obj)
     {
         rotateHeld = false;
     }
+    
     private void UpdateProportionalDrag()
     {
         var velocity = modelRigidbody.velocity;
-        modelRigidbody.drag = (velocity.magnitude / (1.02f + (velocity.magnitude /  10)) * 1.1f);
+        modelRigidbody.drag = (velocity.magnitude / (1.02f + (velocity.magnitude /  10)) * dragScalar);
     }
-
-    private void Rotate(float rotation)
-    {
-        modelRigidbody.AddTorque(rotation, ForceMode2D.Impulse);
-    }
-
+    
     private void Thrust(float force)
     {
         Vector2 temp = Vector2.up*force; 
@@ -93,7 +96,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private void RotateRotator()
     {
-        rotationPoint.transform.RotateAround(target.transform.position, new Vector3(0,0,impulse), 60 * Time.deltaTime);
+        rotationPoint.transform.Rotate(new Vector3(0,0,impulse), 60 * Time.deltaTime);
     }
 
     private void UpdateRotation()
@@ -105,11 +108,9 @@ public class PlayerBehavior : MonoBehaviour
     void FixedUpdate()
     {
         
-        if (thrustHeld) Thrust(0.1f);
-
+        if (thrustHeld) Thrust(0.2f);
         UpdateProportionalDrag();
         UpdateRotation();
-         
         if (rotateHeld) RotateRotator();
     }
 
