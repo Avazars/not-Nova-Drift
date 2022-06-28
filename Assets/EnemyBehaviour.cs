@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using Scriptable_Objects.Enemy.Scripts;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
