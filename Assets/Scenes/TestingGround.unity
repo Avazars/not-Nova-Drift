@@ -289,7 +289,7 @@ MonoBehaviour:
   m_AssetsPPU: 100
   m_RefResolutionX: 1920
   m_RefResolutionY: 1080
-  m_UpscaleRT: 1
+  m_UpscaleRT: 0
   m_PixelSnapping: 1
   m_CropFrameX: 0
   m_CropFrameY: 0
@@ -319,9 +319,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 50
-  orthographic: 0
-  orthographic size: 5
+  field of view: 60.6
+  orthographic: 1
+  orthographic size: 6
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -595,6 +595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2823348114738943694, guid: a9a01a2c955b1e549be27057aba17b8b, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 11400000, guid: d20422eb849a0f54ea8130b4c518d93e, type: 2}
     - target: {fileID: 3951947231765231811, guid: a9a01a2c955b1e549be27057aba17b8b, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -637,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 1380698352}
     - target: {fileID: 8873139120914508576, guid: a9a01a2c955b1e549be27057aba17b8b, type: 3}
       propertyPath: rotationSpeed
-      value: 0.6
+      value: 1.45
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2385146188627223747, guid: a9a01a2c955b1e549be27057aba17b8b, type: 3}
