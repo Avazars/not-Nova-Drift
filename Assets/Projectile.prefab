@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8666824207862345007}
   - component: {fileID: 986230436132652597}
   - component: {fileID: 4659406601864667770}
-  - component: {fileID: 5227241974995159755}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: PlayerProjectile
@@ -124,18 +123,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &5227241974995159755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6838905836491677331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2b3a35f43d00d4f8f5ac0c15031094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileLifetime: 2
-  projectileDamage: 1
-  initialVelocity: 70

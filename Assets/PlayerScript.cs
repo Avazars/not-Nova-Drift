@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerBehavior : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     
     private Rigidbody2D modelRigidbody;
@@ -15,12 +15,12 @@ public class PlayerBehavior : MonoBehaviour
     private bool rotateHeld;
     private bool thrustHeld;
 
-    
     private float impulse;
     
     [SerializeField] private float dragScalar;
     [SerializeField] private float rotationSpeed;
-
+    [SerializeField] private float thrustSpeed;
+    
     private void Start()
     {
         modelRigidbody = target.GetComponent<Rigidbody2D>();
@@ -103,11 +103,9 @@ public class PlayerBehavior : MonoBehaviour
         modelRigidbody.transform.rotation = Quaternion.Slerp(modelRigidbody.transform.rotation, rotationPoint.transform.rotation, Time.deltaTime * rotationSpeed);
     }
     
-    // Update is called once per frame
     void FixedUpdate()
     {
-        
-        if (thrustHeld) Thrust(0.2f);
+        if (thrustHeld) Thrust(thrustSpeed);
         UpdateProportionalDrag();
         UpdateRotation();
         if (rotateHeld) RotateRotator();

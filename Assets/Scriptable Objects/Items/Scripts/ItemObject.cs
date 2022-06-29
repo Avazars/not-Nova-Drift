@@ -8,6 +8,7 @@ namespace Scriptable_Objects.Items.Scripts
         Shield,
         Thruster,
         Weapon,
+        Projectile,
         Upgrade,
         Default,
     }

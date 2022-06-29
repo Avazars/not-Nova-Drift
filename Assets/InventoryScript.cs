@@ -1,7 +1,7 @@
 using Scriptable_Objects.Inventory.Scripts;
 using UnityEngine;
 
-public class InventoryBehavior : MonoBehaviour
+public class InventoryScript : MonoBehaviour
 {
     public InventoryObject inventory;
 

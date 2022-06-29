@@ -19,9 +19,14 @@ namespace Misc
             coolDownCompletedTime = Time.time + CoolDownTime;
         }
         
-        public void UpdateCoolDownTime(float timeChange)
+        public void IncreaseCoolDownTime(float timeChange)
         {
             CoolDownTime += timeChange;
+        }
+
+        public void RestartCoolDownTimer()
+        {
+            coolDownCompletedTime = Time.time + CoolDownTime;
         }
     }
 }

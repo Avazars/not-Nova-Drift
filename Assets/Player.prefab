@@ -41,11 +41,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2385146189046849392}
   - component: {fileID: -309312852338931827}
-  - component: {fileID: 8873139120914508576}
-  - component: {fileID: 2823348114738943694}
+  - component: {fileID: 4695841836106829121}
+  - component: {fileID: 674432714051463058}
+  - component: {fileID: 5234127101484093191}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player Control
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &8873139120914508576
+--- !u!114 &4695841836106829121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,11 +110,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574f78d7b4ebeff4fbf0fd151e821e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 3726770634123960686}
-  rotationPoint: {fileID: 6019317986368207228}
+  target: {fileID: 0}
+  rotationPoint: {fileID: 0}
   dragScalar: 0
   rotationSpeed: 0
---- !u!114 &2823348114738943694
+  thrustSpeed: 0
+--- !u!114 &674432714051463058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2385146189046849395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0359df9a8e454dd780773439119b6f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5234127101484093191
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ab6c3140c115e4aa919abe4d86a5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
+  inventory: {fileID: 11400000, guid: d20422eb849a0f54ea8130b4c518d93e, type: 2}
 --- !u!1 &3702332207149468567
 GameObject:
   m_ObjectHideFlags: 0
