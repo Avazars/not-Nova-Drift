@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +18,7 @@ public class PlayerScript : MonoBehaviour
 
     private float impulse;
     
+    [SerializeField] private float angle;
     [SerializeField] private float dragScalar;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float thrustSpeed;
@@ -24,8 +26,19 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         modelRigidbody = target.GetComponent<Rigidbody2D>();
+        EnemyBehaviour.EnemyTakenDamage += IHitTarget;
+    }
+
+    private void IHitTarget(object sender, EnemyBehaviour.DamageTakenEventArgs e)
+    {
+        if (e.fromEntityType == EntityType.Player)
+        {
+            Debug.Log("yay!");
+        }
     }
     
+    
+
     private void Awake()
     {
         actions = new InputActions();
@@ -95,7 +108,8 @@ public class PlayerScript : MonoBehaviour
 
     private void RotateRotator()
     {
-        rotationPoint.transform.Rotate(new Vector3(0,0,impulse), 60 * Time.deltaTime);
+        
+        rotationPoint.transform.Rotate(new Vector3(0,0,impulse), angle * Time.deltaTime);
     }
 
     private void UpdateRotation()

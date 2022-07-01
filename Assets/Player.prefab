@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 2385146189046849392}
   - component: {fileID: -309312852338931827}
   - component: {fileID: 4695841836106829121}
-  - component: {fileID: 674432714051463058}
   - component: {fileID: 5234127101484093191}
   m_Layer: 0
   m_Name: Player
@@ -110,23 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574f78d7b4ebeff4fbf0fd151e821e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  rotationPoint: {fileID: 0}
-  dragScalar: 0
-  rotationSpeed: 0
-  thrustSpeed: 0
---- !u!114 &674432714051463058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2385146189046849395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0359df9a8e454dd780773439119b6f2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  target: {fileID: 3726770634123960686}
+  rotationPoint: {fileID: 6019317986368207228}
+  angle: 120
+  dragScalar: 0.7
+  rotationSpeed: 2
+  thrustSpeed: 1
 --- !u!114 &5234127101484093191
 MonoBehaviour:
   m_ObjectHideFlags: 0
