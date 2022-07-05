@@ -6,12 +6,6 @@ namespace EntityStats
 {
     public abstract class EntityStat
     {
-        
-        /// <summary>
-        /// the base value that will be added by the constructor of the child classes.
-        /// </summary>
-        protected float baseValue;
-        
         public TypeOfStat Type { get; protected set; }
 
         /// <summary>
@@ -40,10 +34,13 @@ namespace EntityStats
         /// <param name="mod"></param>
         public void AddModifier(StatMod mod)
         {
-            statMods.Add(mod);
-            Recalculate();
+            if (!statMods.Contains(mod))
+            {
+                statMods.Add(mod);
+                Recalculate();
+            }
         }
-        
+
         /// <summary>
         /// the code that removes a modifier from this stats modifiers list
         /// then recalculates the final value
@@ -51,8 +48,11 @@ namespace EntityStats
         /// <param name="mod"></param>
         public void RemoveModifier(StatMod mod)
         {
-            statMods.Remove(mod);
-            Recalculate();
+            if (statMods.Contains(mod))
+            {
+                statMods.Remove(mod);
+                Recalculate();   
+            }
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace EntityStats
         /// </summary>
         private void Recalculate()
         {
-            float temp = baseValue;
+            float temp = 0;
             float sumPercentAdd = 0;
             
             // LINQ - (Language Integrated Query)

@@ -1,0 +1,24 @@
+﻿
+Descriptions for the things that are used in the player structure 
+
+    #Scripts
+    - PlayerBase ( The script that sets up the base of the player game object. initialization of stats and other managers
+        will go in here along with things that multiple scripts might need like the rigidbody of the entity. )
+    
+        - PlayerController ( The script that will get the component that implements the IMovable interface and control
+            when the player moves, this will be replaced with AI in enemies. )
+    
+        - PhysicsMovement ( The script that will contain the physics based movement, will implement the IMovable 
+            interface, also contains an Event that will fire when movement is called that will pass the type of movement 
+            that occured )
+    
+        - 
+    
+    - PlayerTestingScript ( Used to test the events that I am firing from the player Object )
+    
+    #Enums
+    - MoveType ( an enum that is used to tell something what kind of movement occured. ThrustStart, ThrustStop... ect)
+    
+    #Interfaces
+    - IMovable ( an interface that will force its implementers to specify how to move something )
+    - IBaseEntity ( an interface that will implement the components of a base entity script )

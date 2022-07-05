@@ -4,7 +4,6 @@
     {
         public ProjectileSize()
         {
-            this.baseValue = 1.0f;
             this.Type = TypeOfStat.ProjectileSize;
         }
     }

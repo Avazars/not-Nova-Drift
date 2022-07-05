@@ -4,7 +4,6 @@
     {
         public RotationSpeed()
         {
-            this.baseValue = 1.0f;
             this.Type = TypeOfStat.RotationSpeed;
         }
     }

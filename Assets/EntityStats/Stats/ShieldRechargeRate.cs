@@ -4,7 +4,6 @@
     {
         public ShieldRechargeRate()
         {
-            this.baseValue = 1.0f;
             this.Type = TypeOfStat.ShieldRechargeRate;
         }
     }

@@ -9,7 +9,7 @@ namespace EntityStats
     {
         // Maybe make a class that stores lists of all the things in the game so that I only have to linq and reflection
         // it once per game session.
-        private readonly Dictionary<TypeOfStat, EntityStat> dictionaryOfStats = new();
+        private readonly Dictionary<TypeOfStat, EntityStat> dictionaryOfStats= new Dictionary<TypeOfStat, EntityStat>();
 
         public EntityStatManager()
         {
